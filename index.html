@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnglishPath — Daily English for Hungarian Learners</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ===== DASHBOARD VIEW ===== -->
+<div id="view-dashboard" class="view active">
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-icon">📘</span>
+      <span class="logo-text">EnglishPath</span>
+    </div>
+    <div class="header-stats">
+      <div class="stat-pill streak">
+        <span class="stat-icon">🔥</span>
+        <span id="dash-streak">0</span> day streak
+      </div>
+      <div class="stat-pill progress">
+        <span class="stat-icon">⭐</span>
+        <span id="dash-score">0</span> pts
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <!-- Hero Today Card -->
+    <section class="today-card">
+      <div class="today-card-label">TODAY'S LESSON</div>
+      <div class="today-card-day" id="today-day-number">Day 1</div>
+      <div class="today-card-title" id="today-lesson-title">Loading...</div>
+      <div class="today-card-meta">
+        <span class="meta-badge" id="today-week-type">New Material</span>
+        <span class="meta-badge gray" id="today-unit">Unit 1</span>
+      </div>
+      <button class="btn-primary btn-large" id="btn-start-today">Start Today's Lesson →</button>
+    </section>
+
+    <!-- Progress Bar -->
+    <section class="progress-section">
+      <div class="progress-header">
+        <span class="progress-label">Year Progress</span>
+        <span class="progress-fraction" id="progress-fraction">0 / 365 days</span>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progress-bar-fill" style="width:0%"></div>
+      </div>
+    </section>
+
+    <!-- Week Grid -->
+    <section class="week-section">
+      <h2 class="section-title">This Week</h2>
+      <div class="week-grid" id="week-grid">
+        <!-- filled by JS -->
+      </div>
+    </section>
+
+    <!-- All Lessons -->
+    <section class="all-lessons-section">
+      <h2 class="section-title">All Lessons</h2>
+      <div class="unit-filter" id="unit-filter">
+        <!-- unit buttons filled by JS -->
+      </div>
+      <div class="lessons-list" id="lessons-list">
+        <!-- filled by JS -->
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ===== LESSON VIEW ===== -->
+<div id="view-lesson" class="view">
+  <header class="lesson-header">
+    <button class="btn-back" id="btn-back">← Back</button>
+    <div class="lesson-header-info">
+      <span id="lesson-header-day" class="lesson-day-badge">Day 1</span>
+      <span id="lesson-header-unit" class="lesson-unit-text">Unit 1</span>
+    </div>
+    <div class="lesson-header-score" id="lesson-header-score">⭐ 0 pts</div>
+  </header>
+
+  <div class="lesson-body">
+    <!-- Title -->
+    <div class="lesson-title-block">
+      <div class="lesson-type-tag" id="lesson-type-tag">NEW MATERIAL</div>
+      <h1 class="lesson-title" id="lesson-title">Lesson Title</h1>
+      <p class="lesson-subtitle" id="lesson-subtitle">Subtitle</p>
+    </div>
+
+    <!-- Content sections rendered here -->
+    <div id="lesson-content"></div>
+
+    <!-- Complete button -->
+    <div class="lesson-footer">
+      <div class="lesson-score-summary" id="lesson-score-summary" style="display:none">
+        <div class="score-big" id="score-big">🌟 Great job!</div>
+        <div class="score-detail" id="score-detail"></div>
+      </div>
+      <button class="btn-primary btn-complete" id="btn-complete-lesson">✓ Complete Lesson</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div id="toast" class="toast"></div>
+
+<script src="lessons.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
